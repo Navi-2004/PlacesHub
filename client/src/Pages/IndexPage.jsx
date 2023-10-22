@@ -25,12 +25,12 @@ export default function IndexPage() {
     });
   }, []);
   return (
-    <div className="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+    <div className="mt-16  ml-12 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
       {places.length > 0 && places.map(place => (
         <Link to={'/place/'+place._id}>
-          <div className="bg-gray-500 mb-2 rounded-2xl flex">
+          <div className="bg-gray-500 mb-2 rounded-2xl flex w-64">
             {place.photos?.[0] && (
-              <Image className="rounded-2xl object-cover aspect-square" src={place.photos?.[0]} alt=""/>
+              <Image className="rounded-2xl object-cover aspect-square w-64 h-64" src={place.photos?.[0]} alt=""/>
             )}
           </div>
           <h2 className="font-bold">{place.address}</h2>

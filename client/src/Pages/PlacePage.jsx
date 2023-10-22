@@ -28,13 +28,13 @@ export default function PlacePage() {
       <PlaceGallery place={place} />
       <div className="mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr]">
         <div>
-          <div className="my-4 w-56">
-            <h2 className="font-semibold text-2xl w-56">Description</h2>
+          <div className="my-4 ">
+            <h2 className="font-semibold text-2xl ">Description</h2>
             {place.description}
           </div>
-          Check-in: {place.checkIn}<br />
-          Check-out: {place.checkOut}<br />
-          Max number of guests: {place.maxGuests}
+          <b>Check-in:</b> {place.checkIn}<br />
+          <b>Check-out:</b> {place.checkOut}<br />
+          <b>Max number of guests:</b> {place.maxGuests}
         </div>
         <div>
           <BookingWidget place={place} />
