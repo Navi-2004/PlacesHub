@@ -26,7 +26,7 @@ dotenv.config();
 
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:8000',
+    origin:'https://places-g1ftyfev5-navi-2004.vercel.app/',
     
 }
 ));
