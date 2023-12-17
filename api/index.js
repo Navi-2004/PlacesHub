@@ -26,10 +26,12 @@ dotenv.config();
 
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:5173',
+    origin:'http://localhost:8000',
     
 }
 ));
+
+// app.use(cors());
 
 app.use(express.json());
 app.use(CookieParser());
