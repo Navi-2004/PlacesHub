@@ -11,7 +11,7 @@ export default function Register() {
     ev.preventDefault();
     console.log(name, email, password);
     try {
-  const response = await axios.post('http://localhost:5000/register', {
+  const response = await axios.post('https://placesserver.onrender.com/register', {
 
   name: name,
   email: email,
