@@ -25,11 +25,12 @@ const jwtSecret="Navi"
 dotenv.config();
 
 app.use(cors({
-    credentials:true,
-    origin:'https://places-hub.vercel.app'
-    
-}
-));
+  credentials: true,
+  origin: 'https://places-hub.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  headers: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
+}));
+
 
 // app.use(cors());
 
