@@ -9,7 +9,7 @@ import BookingDates from "../Components/BookingDates";
 export default function BookingsPage() {
   const [bookings,setBookings] = useState([]);
   useEffect(() => {
-    axios.get('/bookings').then(response => {
+    axios.get('https://placesserver.onrender.com/bookings').then(response => {
       setBookings(response.data);
     });
   }, []);
@@ -18,7 +18,7 @@ export default function BookingsPage() {
       <AccountNav />
       <div>
         {bookings?.length > 0 && bookings.map(booking => (
-          <Link to={`/account/bookings/${booking._id}`} className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden">
+          <Link to={`https://placesserver.onrender.com/account/bookings/${booking._id}`} className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden">
             <div className="w-48">
               <PlaceImg place={booking.place} />
             </div>
