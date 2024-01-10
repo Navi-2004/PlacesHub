@@ -64,13 +64,13 @@ export default function PlacesFormPage() {
     };
     if (id) {
       // update
-      await axios.put('https://placesserver.onrender.com/places', {
+      await axios.put('/places', {
         id, ...placeData
       });
       setRedirect(true);
     } else {
       // new place
-      await axios.post('https://placesserver.onrender.com/places', placeData);
+      await axios.post('/places', placeData);
       setRedirect(true);
     }
 

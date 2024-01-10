@@ -25,13 +25,13 @@ export default function BookingWidget({place}) {
   }
 
   async function bookThisPlace() {
-    const response = await axios.post('https://placesserver.onrender.com/bookings', {
+    const response = await axios.post('/bookings', {
       checkIn,checkOut,numberOfGuests,name,phone,
       place:place._id,
       price:numberOfNights * place.price,
     });
     const bookingId = response.data._id;
-    setRedirect(`https://placesserver.onrender.com/account/bookings/${bookingId}`);
+    setRedirect(`/account/bookings/${bookingId}`);
   }
 
   if (redirect) {
