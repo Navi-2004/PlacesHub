@@ -30,7 +30,7 @@ export default function AccountPage() {
   }
 
   async function logout() {
-    await axios.post('https://placesserver.onrender.com/logout');
+    await axios.post('http://localhost:5000/logout');
     setRedirect('/');
     setUser(null);
   }

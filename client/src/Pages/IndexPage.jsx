@@ -1,17 +1,3 @@
-// import {Link} from 'react-router-dom'
-// import Header from '../Components/Header'
-// export default function IndexPage(){
-//     return (
-//         <div>
-            
-//          Index page here
-         
-      
-//     </div>
-//     )
-// } 
-
-
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
@@ -43,3 +29,4 @@ export default function IndexPage() {
     </div>
   );
 }
+

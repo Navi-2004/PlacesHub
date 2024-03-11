@@ -1,10 +1,4 @@
-// export default function Login() {
-//     return (
-//         <div>
-            
-//         </div>
-//     )
-// }
+
 
 import {Link, Navigate} from "react-router-dom";
 import {useContext, useState} from "react";
@@ -19,7 +13,7 @@ export default function LoginPage() {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-      const {data} = await axios.post('https://placesserver.onrender.com/login', {email,password} );
+      const {data} = await axios.post('http://localhost:5000/login', {email,password} );
       setUser(data);
       alert('Login successful');
       setRedirect(true);

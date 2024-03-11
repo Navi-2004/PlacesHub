@@ -15,9 +15,7 @@ import PlacesFormPage from './Pages/PlacesFormPage'
 import PlacePage from "./Pages/PlacePage";
 import BookingsPage from "./Pages/BookingsPage";
 import BookingPage from "./Pages/BookingPage";
-// axios.defaults.baseURL = 'https://placeshub.onrender.com';
-axios.defaults.baseURL = 'https://placesserver.onrender.com';
-
+axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.withCredentials = true;
 
 function App() {
