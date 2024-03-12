@@ -22,7 +22,7 @@ export default function PlacesFormPage() {
     if (!id) {
       return;
     }
-    axios.get('/places/'+id).then(response => {
+    axios.get('http://localhost:5000/places/'+id).then(response => {
        const {data} = response;
        setTitle(data.title);
        setAddress(data.address);
@@ -64,13 +64,13 @@ export default function PlacesFormPage() {
     };
     if (id) {
       // update
-      await axios.put('/places', {
+      await axios.put('http://localhost:5000/places', {
         id, ...placeData
       });
       setRedirect(true);
     } else {
       // new place
-      await axios.post('/places', placeData);
+      await axios.post('http://localhost:5000/places', placeData);
       setRedirect(true);
     }
 

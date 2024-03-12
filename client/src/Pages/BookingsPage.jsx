@@ -9,7 +9,7 @@ import BookingDates from "../Components/BookingDates";
 export default function BookingsPage() {
   const [bookings,setBookings] = useState([]);
   useEffect(() => {
-    axios.get('/bookings').then(response => {
+    axios.get('http://localhost:5000/bookings').then(response => {
       setBookings(response.data);
     });
   }, []);

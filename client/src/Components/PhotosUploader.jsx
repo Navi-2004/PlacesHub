@@ -6,7 +6,7 @@ export default function PhotosUploader({addedPhotos,onChange}) {
   const [photoLink,setPhotoLink] = useState('');
   async function addPhotoByLink(ev) {
     ev.preventDefault();
-    const {data:filename} = await axios.post('/upload-by-link', {link: photoLink});
+    const {data:filename} = await axios.post('http://localhost:5000/upload-by-link', {link: photoLink});
     console.log(photoLink)
     onChange(prev => {
       return [...prev, filename];
@@ -21,7 +21,7 @@ export default function PhotosUploader({addedPhotos,onChange}) {
     for (let i = 0; i < files.length; i++) {
       data.append('photos', files[i]);
     }
-    axios.post('/upload', data, {
+    axios.post('http://localhost:5000/upload', data, {
       headers: {'Content-type':'multipart/form-data'}
     }).then(response => {
       const {data:filenames} = response;
@@ -41,10 +41,10 @@ export default function PhotosUploader({addedPhotos,onChange}) {
   return (
     <>
       <div className="flex gap-2">
-        <input value={photoLink}
+        {/* <input value={photoLink}
                onChange={ev => setPhotoLink(ev.target.value)}
                type="text" placeholder={'Add using a link ....jpg'}/>
-        <button onClick={addPhotoByLink} className="bg-gray-200 px-4 rounded-2xl">Add&nbsp;photo</button>
+        <button onClick={addPhotoByLink} className="bg-gray-200 px-4 rounded-2xl">Add&nbsp;photo</button> */}
       </div>
       <div className="mt-2 grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {addedPhotos.length > 0 && addedPhotos.map(link => (
